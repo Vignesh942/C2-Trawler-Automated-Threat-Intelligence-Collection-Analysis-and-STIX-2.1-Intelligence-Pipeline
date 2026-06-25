@@ -177,48 +177,45 @@ c2-trawler/
 
 ## Installation
 
-Clone the repository:
+### 1) Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/c2-trawler.git
-cd c2-trawler
+git clone https://github.com/Vignesh942/C2-Trawler-Automated-Threat-Intelligence-Collection-Analysis-and-STIX-2.1-Intelligence-Pipeline.git
+cd C2-Trawler-Automated-Threat-Intelligence-Collection-Analysis-and-STIX-2.1-Intelligence-Pipeline
+cd "C2-Trawler Automated Command-and-Control Infrastructure Threat Intelligence Pipeline"
 ```
 
-Install dependencies:
+### 2) Create and activate a virtual environment
+
+**Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+**macOS/Linux (bash/zsh):**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3) Install dependencies
 
 ```bash
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
----
-
-## Usage
-
-Run a complete intelligence collection cycle:
+### 4) Configure environment variables
 
 ```bash
-python main.py
+cp .env.example .env
 ```
 
-Search for an IP:
+> On Windows PowerShell, use:
+> `Copy-Item .env.example .env`
 
-```bash
-python main.py search-ip 1.2.3.4
-```
-
-Search for a domain:
-
-```bash
-python main.py search-domain example.com
-```
-
-Search for a malware family:
-
-```bash
-python main.py search-malware Remcos
-```
-
----
+`THREATFOX_API_KEY` is optional but recommended for live collection reliability.
 
 ## Generated Artifacts
 
