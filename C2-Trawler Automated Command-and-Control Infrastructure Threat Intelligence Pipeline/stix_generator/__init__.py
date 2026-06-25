@@ -1,0 +1,2 @@
+"""STIX generation package."""
+
